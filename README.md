@@ -27,7 +27,12 @@ $ sudo nano ~/.bashrc
 # Adding end to file
 
 $ export PATH=/usr/local/cuda-10.2/lib64:$PATH
+
 $ export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+
+$ source ~/.bashrc
+
+$ sudo reboot
 
 $ nvcc -V
 
@@ -48,7 +53,7 @@ $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 # https://developer.nvidia.com/nvidia-video-codec-sdk
 # Download NVDECODE 
 
-$ sudo cp ~/Video_Codec_SDK_11.0.10/Lib/Linux/stubs/x86_64/libnvi* /usr/local/cuda/lib64/
+$ sudo cp ~/Video_Codec_SDK_11.0.10/Lib/linux/stubs/x86_64/libnvi* /usr/local/cuda/lib64/
 
 $ sudo cp ~/Video_Codec_SDK_11.0.10/Interface/* /usr/local/cuda/include/
 
