@@ -1,7 +1,7 @@
 # OpenCV4Cuda102Ubuntu18
 # Installation OpenCV 4.2.0 with CUDA 10.2 CUDNN 7.6.5 on UBUNTU 18.04 (VIDEO CODEC SDK) - NVIDIA GEFORCE GTX 1060 (6GB)
 # 1. Step: Install CUDA 10.2
-# https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal
+ https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal
 # Operating System : Linux
 # Architecture : x86_64
 # Distribution : Ubuntu
