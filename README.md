@@ -27,58 +27,58 @@ nvcc -V
 # https://developer.nvidia.com/rdp/cudnn-archive --> Download cuDNN 7.6.5 Library for Linux (a .tgz file)
 # Cudnn files from export .tgz file
 
-cd ~/cudnn-10.2-linux-x64-v7.6.5
-sudo cp ./cuda/lib64/* /usr/local/cuda/lib64/
-sudo cp ./cuda/include/* /usr/local/cuda/include/
-sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+$ cd ~/cudnn-10.2-linux-x64-v7.6.5
+$ sudo cp ./cuda/lib64/* /usr/local/cuda/lib64/
+$ sudo cp ./cuda/include/* /usr/local/cuda/include/
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
 # Installation Video Codec SDK 
 # https://developer.nvidia.com/nvidia-video-codec-sdk
 # Download NVDECODE 
 
-sudo cp ~/Video_Codec_SDK_11.0.10/Lib/Linux/stubs/x86_64/libnvi* /usr/local/cuda/lib64/
-sudo cp ~/Video_Codec_SDK_11.0.10/Interface/* /usr/local/cuda/include/
+$ sudo cp ~/Video_Codec_SDK_11.0.10/Lib/Linux/stubs/x86_64/libnvi* /usr/local/cuda/lib64/
+$ sudo cp ~/Video_Codec_SDK_11.0.10/Interface/* /usr/local/cuda/include/
 
 # Now, starting installation OPENCV 4.2.0
 
-sudo apt update
-sudo apt upgrade
+$ sudo apt update
+$ sudo apt upgrade
 
-sudo apt install build-essential cmake pkg-config unzip yasm git checkinstall
-sudo apt install libjpeg-dev libpng-dev libtiff-dev
-sudo apt install libavcodec-dev libavformat-dev libswscale-dev libavresample-dev
-sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-sudo apt install libxvidcore-dev x264 libx264-dev libfaac-dev libmp3lame-dev libtheora-dev 
-sudo apt install libfaac-dev libmp3lame-dev libvorbis-dev
-sudo apt install libopencore-amrnb-dev libopencore-amrwb-dev
-sudo apt-get install libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils
-cd /usr/include/linux
-sudo ln -s -f ../libv4l1-videodev.h videodev.h
-cd ~
+$ sudo apt install build-essential cmake pkg-config unzip yasm git checkinstall
+$ sudo apt install libjpeg-dev libpng-dev libtiff-dev
+$ sudo apt install libavcodec-dev libavformat-dev libswscale-dev libavresample-dev
+$ sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+$ sudo apt install libxvidcore-dev x264 libx264-dev libfaac-dev libmp3lame-dev libtheora-dev 
+$ sudo apt install libfaac-dev libmp3lame-dev libvorbis-dev
+$ sudo apt install libopencore-amrnb-dev libopencore-amrwb-dev
+$ sudo apt-get install libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils
+$ cd /usr/include/linux
+$ sudo ln -s -f ../libv4l1-videodev.h videodev.h
+$ cd ~
 
-sudo apt-get install libgtk-3-dev
-sudo apt-get install libtbb-dev
+$ sudo apt-get install libgtk-3-dev
+$ sudo apt-get install libtbb-dev
 
-sudo apt-get install libatlas-base-dev gfortran
-sudo apt-get install libprotobuf-dev protobuf-compiler
-sudo apt-get install libgoogle-glog-dev libgflags-dev
-sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
+$ sudo apt-get install libatlas-base-dev gfortran
+$ sudo apt-get install libprotobuf-dev protobuf-compiler
+$ sudo apt-get install libgoogle-glog-dev libgflags-dev
+$ sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
 
-cd ~
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
-cd opencv/
-git checkout -b v4.2.0
-cd ..
-cd opencv_contrib/
-git checkout -b v4.2.0
-cd ..
-cd opencv/
+$ cd ~
+$ git clone https://github.com/opencv/opencv.git
+$ git clone https://github.com/opencv/opencv_contrib.git
+$ cd opencv/
+$ git checkout -b v4.2.0
+$ cd ..
+$ cd opencv_contrib/
+$ git checkout -b v4.2.0
+$ cd ..
+$ cd opencv/
 
 # If you want to install with Qt you must add WITH_QT=ON
-mkdir build && cd build
+$ mkdir build && cd build
 
-cmake -D CMAKE_BUILD_TYPE=RELEASE \    
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \    
 -D CMAKE_INSTALL_PREFIX=/usr/local \         
 -D INSTALL_C_EXAMPLES=ON \         
 -D INSTALL_PYTHON_EXAMPLES=OFF \        
@@ -114,16 +114,16 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \         
 -D BUILD_EXAMPLES=ON ..
 
-make -j4
-sudo make install 
-sudo ldconfig
-pkg-config --libs opencv4
+$ make -j4
+$ sudo make install 
+$ sudo ldconfig
+$ pkg-config --libs opencv4
 
 #Output: -L/usr/local/lib -lopencv_gapi ... -lopencv_cudafeatures2d ...
 
 # Optional Install 
-sudo apt-get install qtcreator
-sudo apt-get install qt5-default
-sudo apt-get update
+$ sudo apt-get install qtcreator
+$ sudo apt-get install qt5-default
+$ sudo apt-get update
 
 # READY SYSTEM 
